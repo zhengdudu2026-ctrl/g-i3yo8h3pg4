@@ -265,6 +265,102 @@ button:focus-visible{outline:3px solid #fff;outline-offset:2px}
 .toast-global{position:absolute;left:50%;top:176px;z-index:50;transform:translate(-50%,-20px);opacity:0;background:rgba(40,10,0,.85);color:#fff;padding:9px 16px;border-radius:14px;font-size:13.5px;font-weight:700;max-width:88%;text-align:center;transition:all .3s;pointer-events:none;line-height:1.45}
 .toast-global.on{transform:translate(-50%,0);opacity:1}
 #fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:100}
+
+/* ============ MODES / CAMPAIGN ============ */
+.mode-btns{display:flex;gap:10px;align-items:stretch}
+.mode-btns .btn-camp{flex:1.5;font-size:21px;height:66px;padding:0 6px}
+.mode-btns .btn-camp small{font-size:11px}
+.btn-free{flex:1;height:66px;border-radius:999px;font-size:20px;font-weight:900;color:#7a2a00;background:linear-gradient(180deg,#fff7c2,#ffd84a 55%,#ffb300);box-shadow:0 6px 0 #c47a00,0 10px 20px rgba(200,120,0,.3),inset 0 2px 0 rgba(255,255,255,.7)}
+.btn-free small{display:block;font-size:11px;font-weight:700;opacity:.85}
+.btn-free:active{transform:translateY(4px);box-shadow:0 2px 0 #c47a00}
+#screen-map>*{flex:none}
+#screen-map{overflow-y:auto;overflow-x:hidden;background:linear-gradient(180deg,#ff3d2e 0,#ff6a3a 200px,#fff2d6 201px);padding-bottom:10px}
+.map-top{display:flex;align-items:center;gap:8px;padding:calc(10px + env(safe-area-inset-top)) 12px 4px;color:#fff}
+.map-title{flex:1;font-size:22px;font-weight:900;letter-spacing:.06em;text-shadow:0 2px 0 #b3001b}
+.rank-chip{background:rgba(120,0,15,.3);padding:5px 12px;border-radius:999px;font-weight:700;font-size:12.5px}
+.rank-chip b{color:#fff3b0}
+.map-hero{text-align:center;color:#fff;padding:0 16px 8px}
+.map-hero p{margin:2px 0 6px;font-size:13.5px}
+.map-crown{font-size:40px;line-height:1;filter:drop-shadow(0 4px 6px rgba(120,0,0,.35));animation:titleBounce 1.8s ease-in-out infinite}
+.map-who{display:inline-block;background:rgba(255,255,255,.95);color:#8a3a1a;border-radius:999px;padding:5px 12px;font-size:12px;box-shadow:0 3px 0 rgba(150,40,0,.25)}
+.map-who b{color:#d0102a}
+.ladder{position:relative;margin:10px 18px 0;padding:6px 0;display:flex;flex-direction:column;gap:12px}
+.ladder::before,.ladder::after{content:"";position:absolute;top:-6px;bottom:-6px;width:12px;border-radius:6px;background:linear-gradient(90deg,#ffe680,#e59b00);box-shadow:0 3px 6px rgba(150,80,0,.3)}
+.ladder::before{left:22px}.ladder::after{right:22px}
+.rung{position:relative;z-index:1;display:flex;align-items:center;gap:10px;background:#fff;border-radius:18px;padding:10px 12px;box-shadow:0 5px 0 #ffcf8a,0 8px 16px rgba(180,60,0,.12);text-align:left;width:100%;color:inherit}
+.rung .lvno{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-weight:900;color:#fff;background:linear-gradient(180deg,#ff7a4a,#e0102a);font-size:12px;line-height:1.1;flex:none;box-shadow:0 3px 0 #9a0018;text-align:center}
+.rung .lvno big{display:block;font-size:20px}
+.rung .info{flex:1;min-width:0}
+.rung .info b{font-size:15px;color:#6a1a0a;display:block}
+.rung .info small{font-size:11.5px;color:#a0602a;display:block;margin-top:2px;line-height:1.35}
+.rung .st{flex:none;font-size:12px;font-weight:900;text-align:center;min-width:52px}
+.rung .go{display:inline-block;padding:7px 12px;border-radius:999px;background:linear-gradient(180deg,#ff7a4a,#e0102a);color:#fff;box-shadow:0 3px 0 #8f0015}
+.rung .ok{color:#2b8a3e}
+.rung.locked{filter:grayscale(1);opacity:.55}
+.rung.cur{box-shadow:0 0 0 3px #ff2d2d,0 5px 0 #ffcf8a,0 10px 20px rgba(220,0,30,.25)}
+.rung.done .lvno{background:linear-gradient(180deg,#69db7c,#2b8a3e);box-shadow:0 3px 0 #1b5e20}
+.rung.bossr .lvno{background:linear-gradient(180deg,#ffd84a,#f08c00);color:#7a2a00;box-shadow:0 3px 0 #b36b00}
+.map-foot{text-align:center;margin:16px 0 0}
+.reset-btn{background:none;color:#a0602a;text-decoration:underline;font-size:12.5px;padding:6px}
+.lv-timer{position:absolute;left:50%;top:8px;transform:translateX(-50%);z-index:9;background:rgba(40,10,0,.6);color:#fff;font-weight:900;font-size:14px;padding:4px 12px;border-radius:999px;display:none;font-variant-numeric:tabular-nums;white-space:nowrap;pointer-events:none}
+.lv-timer.on{display:block}
+.lv-timer.warn{background:#e0102a;animation:tPulse .6s ease-in-out infinite}
+@keyframes tPulse{50%{transform:translateX(-50%) scale(1.12)}}
+.bubble.glow .bin{box-shadow:0 0 0 4px #fff,0 0 18px 8px rgba(255,230,80,.95)!important}
+.bubble.mini .bin{font-size:12px;padding:6px 10px 8px}
+.bubble.special .bin{outline:3px dashed rgba(255,255,255,.9);outline-offset:2px}
+.float-txt.neg{color:#868e96}
+.btn-chop.pulse{outline:4px solid #ffe066;outline-offset:3px}
+/* L3 chat */
+.lv-chat .bubble-zone{height:100%}
+.lv-chat .deco-chat{display:none}
+.msg.bad .bin{border-left:4px solid #ff4d4f!important}
+.lv-chat .leader-wrap{left:-4%;transform:none;height:44%}
+.lv-chat .leader-say{left:3%;top:44%;max-width:40%}
+.msg{transition:none}
+.msg .bin{background:#fff!important;color:#2b2b2b!important;text-shadow:none!important;border-radius:14px 14px 14px 4px!important;padding:5px 11px 7px!important;font-size:14px!important;animation:none!important;text-align:left;box-shadow:0 3px 0 rgba(0,0,0,.12),0 6px 12px rgba(0,0,0,.2)!important}
+.msg.spawn .bin{animation:spawn .3s ease-out!important}
+.msg .bin::after{display:none}
+.msg .who{display:block;font-style:normal;font-size:10px;font-weight:800;margin-bottom:1px}
+.msg.bad .who{color:#e03131}.msg.good .who{color:#868e96}
+.msg.good .bin{background:#f0fff0!important}
+.msg.wrong .bin{background:#ffe3e3!important;animation:shake .35s!important}
+@keyframes shake{25%{transform:translateX(-6px)}50%{transform:translateX(6px)}75%{transform:translateX(-3px)}}
+/* L4 dodge */
+.lv-req .bubble{transition:left .3s cubic-bezier(.3,1.5,.5,1),top .3s cubic-bezier(.3,1.5,.5,1),translate .25s ease-out}
+/* L5 bus */
+.lv-bus .scene{inset:-12px;animation:busSway 2.2s ease-in-out infinite}
+.lv-bus .bubble-zone{animation:busSway 2.2s ease-in-out infinite}
+@keyframes busSway{0%,100%{transform:translate(-6px,0) rotate(-.8deg)}50%{transform:translate(6px,3px) rotate(.8deg)}}
+.lv-bus.bump .scene,.lv-bus.bump .bubble-zone{animation:busBump .45s ease-out}
+@keyframes busBump{0%{transform:none}25%{transform:translateY(-14px) rotate(-1.5deg)}55%{transform:translateY(6px) rotate(1deg)}100%{transform:none}}
+.lv-bus.bump .leader-wrap{animation:leaderBump .45s ease-out}
+@keyframes leaderBump{25%{translate:0 -16px}55%{translate:0 5px}}
+/* L6 boss */
+.lv-boss .bubble-zone{height:50%}
+.boss{position:absolute;left:50%;top:2%;transform:translateX(-50%);width:136px;padding:0;background:none;z-index:3;touch-action:manipulation;text-align:center}
+.boss .bhp{position:relative;height:14px;border-radius:7px;background:rgba(40,0,10,.55);margin:0 6px 2px;overflow:hidden;border:2px solid #fff;box-shadow:0 2px 0 rgba(0,0,0,.2)}
+.boss .bhp i{position:absolute;left:0;top:0;bottom:0;width:100%;background:linear-gradient(90deg,#ff8787,#ff2d2d);transition:width .3s}
+.boss .bhp span{position:absolute;inset:0;font-size:9px;color:#fff;font-weight:900;line-height:10px;text-align:center}
+.boss .bpie{width:96px;height:96px;margin:0 auto;display:block;animation:bossBob 2.4s ease-in-out infinite;filter:drop-shadow(0 8px 8px rgba(0,0,0,.3))}
+@keyframes bossBob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-6px) rotate(3deg)}}
+.boss .bname{display:inline-block;margin-top:-8px;position:relative;background:linear-gradient(180deg,#ffe066,#f59f00);color:#7a3a00;font-weight:900;font-size:13px;padding:3px 10px;border-radius:999px;box-shadow:0 3px 0 #b36b00;white-space:nowrap}
+.boss .bshield{position:absolute;left:50%;top:58px;width:130px;height:130px;margin:-65px 0 0 -65px;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.75),rgba(140,210,255,.35) 42%,rgba(60,140,255,.28) 72%);border:3px solid rgba(170,225,255,.95);box-shadow:0 0 22px rgba(120,200,255,.9),inset 0 0 22px rgba(255,255,255,.6);display:none;animation:shieldPulse 1.2s ease-in-out infinite;pointer-events:none}
+.boss .bshield span{position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);background:#1c7ed6;color:#fff;font-size:11px;font-weight:900;padding:2px 9px;border-radius:999px;white-space:nowrap;box-shadow:0 2px 0 #0b4a8f}
+@keyframes shieldPulse{50%{transform:scale(1.05);opacity:.85}}
+.boss.shielded .bshield{display:block}
+.boss.hit .bpie{animation:bossHit .35s ease-out}
+@keyframes bossHit{30%{transform:scale(1.18,.84) rotate(-8deg)}60%{transform:scale(.92,1.08) rotate(6deg)}}
+.boss.moving{animation:bossMove 3.2s ease-in-out infinite}
+@keyframes bossMove{0%,100%{left:34%}50%{left:66%}}
+.boss.dead{animation:bossDie .7s ease-in forwards;pointer-events:none}
+@keyframes bossDie{30%{transform:translateX(-50%) scale(1.3)}100%{transform:translateX(-50%) scale(0) rotate(40deg);opacity:0}}
+.camp-final .end-title{color:#fff6c8}
+@media (max-height:860px) and (min-width:700px),(max-height:760px){.boss .bpie{width:76px;height:76px}.boss{width:120px}.boss .bshield{top:50px;width:108px;height:108px;margin:-54px 0 0 -54px}}
+.master-badge{display:none;margin:8px auto 0;width:max-content;background:linear-gradient(180deg,#fff7c2,#ffd84a);color:#b3001b;font-weight:900;padding:6px 16px;border-radius:999px;box-shadow:0 4px 0 #c98a00;font-size:15px;animation:pulse 1.2s infinite}
+.camp-final .master-badge{display:block}
+.lvl-card-rule{background:rgba(255,255,255,.14);border-radius:14px;padding:8px 10px;margin:8px 0 12px;font-size:13px;line-height:1.55;text-align:left}
+.lvl-card-rule b{color:#ffe066}
 @media (max-height:700px){
   .progress-card{padding:6px 10px}.pc-top .pct b{font-size:22px}.bar{height:16px;margin:4px 0}
   .btn-chop{min-height:64px}.tchip svg{width:28px;height:28px}.tchip{width:54px}
@@ -307,8 +403,28 @@ button:focus-visible{outline:3px solid #fff;outline-offset:2px}
       <div class="scene-chips" id="sceneChips"></div>
     </div>
     <div class="start-btn-wrap">
-      <button class="btn-start" id="btnStart">开砍！免费砍一刀<small>首刀必暴击 · 砍到100%领导变神仙</small></button>
+      <div class="mode-btns">
+        <button class="btn-start btn-camp" id="btnCamp">🏆 职场晋级<small>6关闯关 · 实习生→准时下班大师</small></button>
+        <button class="btn-free" id="btnStart">自由砍<small>无限畅砍一刀</small></button>
+      </div>
     </div>
+    <div class="disclaimer">纯属娱乐，角色均为虚构，请勿在现实中对任何人动手 😄</div>
+  </section>
+
+  <!-- ========== CAMPAIGN MAP ========== -->
+  <section id="screen-map" class="screen" aria-label="职场晋级地图">
+    <header class="map-top">
+      <button class="icon-btn" id="mapBack" aria-label="返回首页"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <div class="map-title">职场晋级</div>
+      <div class="rank-chip">当前职级：<b id="rankNow">实习生</b></div>
+    </header>
+    <div class="map-hero">
+      <div class="map-crown">🏆</div>
+      <p>一路砍到「<b>准时下班大师</b>」！每关通关即晋升一级</p>
+      <div class="map-who">本次对手：<b id="mapBoss">画饼王总</b> · 道具：<b id="mapTool">砍价菜刀</b></div>
+    </div>
+    <div class="ladder" id="ladder"></div>
+    <div class="map-foot"><button class="reset-btn" id="btnResetCamp">重置闯关进度</button></div>
     <div class="disclaimer">纯属娱乐，角色均为虚构，请勿在现实中对任何人动手 😄</div>
   </section>
 
@@ -338,6 +454,7 @@ button:focus-visible{outline:3px solid #fff;outline-offset:2px}
     <div class="stage" id="stage">
       <div class="scene" id="scene"></div>
             <div class="combo" id="combo">连击 ×0</div>
+      <div class="lv-timer" id="lvTimer">⏱ 50s</div>
       <div class="bubble-zone" id="bubbleZone"></div>
       <div class="colleague-layer" id="colleagueLayer"></div>
       <div class="leader-wrap" id="leaderWrap"></div>
@@ -363,6 +480,7 @@ button:focus-visible{outline:3px solid #fff;outline-offset:2px}
       <span class="end-tag">砍价成功 · 100%</span>
       <h2 class="end-title">恭喜！领导已变身<br>「神仙领导」</h2>
       <p class="end-sub" id="endSub">全部门准时下班！</p>
+      <div class="master-badge">🏅 准时下班大师 · 职场晋级全通关</div>
       <div class="end-leader"><div id="endLeader"></div><div class="name-plate" id="endName">神仙王总</div></div>
       <div class="perks">
         <div class="perk" style="animation-delay:.1s">✅ 不画饼<small>说涨薪就真涨</small></div>
@@ -808,7 +926,7 @@ function sceneSVG(k){
     <rect width="400" height="480" fill="url(#${id('bg')})"/>${stars}
     <circle cx="336" cy="86" r="30" fill="#fff3b0"/><circle cx="350" cy="78" r="30" fill="#161c48" opacity="0"/><circle cx="326" cy="80" r="5" fill="#f1e08a"/><circle cx="344" cy="98" r="3.5" fill="#f1e08a"/>
     <rect x="160" y="30" width="80" height="22" rx="11" fill="rgba(255,255,255,.18)"/>${T(200,46,12,'23:47','#dfe6ff')}
-    ${bub(16,130,76,'在吗？',0)}${bub(16,172,96,'明早要…',0)}${bub(300,150,70,'收到',1)}${bub(314,192,56,'+1',1)}${bub(16,214,86,'辛苦了',0)}${bub(290,234,90,'收到收到',1)}
+    <g class="deco-chat">${bub(16,130,76,'在吗？',0)}${bub(16,172,96,'明早要…',0)}${bub(300,150,70,'收到',1)}${bub(314,192,56,'+1',1)}${bub(16,214,86,'辛苦了',0)}${bub(290,234,90,'收到收到',1)}</g>
     ${win}<rect x="0" y="380" width="400" height="100" fill="#232a5c"/><rect x="0" y="380" width="400" height="6" fill="#3b4590"/></svg>`; }
   }
   return '';
@@ -931,27 +1049,31 @@ const KNIFE_SAY=['这把刀…只砍气泡对吧？','砍价专用？那还好�
 const CRIT_SAY=['哇啊？！','眼镜！我的眼镜！','这一刀也太狠了吧？！','天呐，暴击？！'];
 const GEN_SAY=['诶？！','嗯？？','这不符合流程啊！','我的PPT呢？','等等，我还没说完！','我…我去泡个茶','谁动了我的周报？'];
 const SLOTS=[[20,24],[50,14],[80,24],[29,66],[71,66]];
-const E=108; // total effort units
-const PTS=[[0,0],[.074,40],[.25,80],[.45,95],[.6,99],[.78,99.9],[.9,99.99],[1,99.999]];
+let E=108; // total effort units (per mode)
+const PTS_FREE=[[0,0],[.074,40],[.25,80],[.45,95],[.6,99],[.78,99.9],[.9,99.99],[1,99.999]];
+const PTS_SOFT=[[0,0],[.3,38],[.7,76],[1,99.999]]; // campaign: honest, no fake crawl
+let PTS=PTS_FREE;
+let HK={}; // level hooks (campaign)
+const pc=k=>(S.popped&&S.popped[k])||0;
 const LINES=[
  ()=>'帮我砍一刀，砍掉领导的‘再简单说两句’！',
- ()=>`已砍掉${S.popped.temp}次临时需求，还差${remStr()}%就能准时下班！`,
+ ()=>`已砍掉${pc('temp')}次临时需求，还差${remStr()}%就能准时下班！`,
  ()=>'别让领导发现，进群一起砍掉‘周末开会’！',
  ()=>`别让${shortOf()}发现，进群一起砍掉‘周末开会’！`,
  ()=>`${nameOf()}的饼已经碎成饼干屑了`,
  ()=>`据可靠消息，${shortOf()}正在偷偷练习“准时散会”`,
- ()=>`已帮全组砍掉${S.popped.pie}张大饼，食堂表示压力很大`,
+ ()=>`已帮全组砍掉${pc('pie')}张大饼，食堂表示压力很大`,
  ()=>'再砍一刀，周报自动写好（并不会）',
- ()=>`已读不回已被砍${S.popped.read}次，领导开始秒回“收到”`,
+ ()=>`已读不回已被砍${pc('read')}次，领导开始秒回“收到”`,
  ()=>'打工人不骗打工人，真的快了！',
  ()=>'恭喜获得「准时下班」碎片 ×1',
  ()=>'砍一刀立减一页PPT',
  ()=>'据说砍到100%，会议能缩短到5分钟',
  ()=>`你已经砍了${S.chops}刀，手速堪比抢红包`,
  ()=>'离神仙领导只差亿点点',
- ()=>`“我简单说两句”已被砍${S.popped.talk}次，会议时长-${S.popped.talk*10}分钟`,
+ ()=>`“我简单说两句”已被砍${pc('talk')}次，会议时长-${pc('talk')*10}分钟`,
  ()=>'领导的保温杯已换成奶茶，气氛轻松了',
- ()=>`已砍掉${S.popped.ot}次加班，家里的猫表示感谢`,
+ ()=>`已砍掉${pc('ot')}次加班，家里的猫表示感谢`,
 ];
 const TICKER=['打工人小A 刚刚砍掉了「周末开会」','实习生豆豆 帮同事砍了一刀','PPT小美 砍掉了领导的「我简单说两句」','摸鱼小刘 成功让领导变成神仙领导','表格侠小周 砍掉了第8个「临时需求」','咖啡续命阿杰 喊来3位同事助力','某部门 全员准时下班（传闻）'];
 
@@ -969,11 +1091,11 @@ function angelOf(){ return '神仙'+shortOf(); }
 try{ const li=parseInt(localStorage.getItem('kl_leader'),10); if(li>=0&&li<LEADERS.length) S.leader=li; S.sur=cleanSur(localStorage.getItem('kl_sur')||''); }catch(e){}
 function saveSur(){ try{ localStorage.setItem('kl_sur',cleanSur(S.sur)); localStorage.setItem('kl_leader',String(S.leader)); }catch(e){} }
 function resetState(){Object.assign(S,{effort:0,chops:0,helps:0,coins:0,combo:0,lastChop:0,done:false,playing:true,started:Date.now(),
-  popped:{pie:0,ot:0,temp:0,read:0,wk:0,talk:0},popTotal:0,ms:{},inviteCd:0,invites:0,modalOpen:false,sceneTimer:0});}
+  popped:{},popTotal:0,shield:0,lost:false,ms:{},inviteCd:0,invites:0,modalOpen:false,sceneTimer:0});}
 resetState(); S.playing=false;
 
 function pctOf(e){ if(e>=E) return 100; const u=e/E; for(let i=1;i<PTS.length;i++){ if(u<=PTS[i][0]){ const [u0,p0]=PTS[i-1],[u1,p1]=PTS[i]; return p0+(p1-p0)*(u-u0)/(u1-u0);} } return 99.999; }
-function pctDisp(){ return S.done?100:Math.min(99.99,Math.floor(pctOf(S.effort)*100)/100); }
+function pctDisp(){ return S.done&&!S.lost?100:Math.min(99.99,Math.floor(pctOf(S.effort)*100)/100); }
 function remStr(){ return (100-pctDisp()).toFixed(2); }
 const rnd=a=>a[Math.floor(Math.random()*a.length)];
 
@@ -988,8 +1110,8 @@ async function copyText(t){
   try{ if(navigator.clipboard&&window.isSecureContext){ await Promise.race([navigator.clipboard.writeText(t),new Promise((_,rej)=>setTimeout(()=>rej(new Error('timeout')),900))]); return true; } }catch(e){}
   try{ const ta=document.createElement('textarea'); ta.value=t; ta.setAttribute('readonly',''); ta.style.cssText='position:fixed;left:-9999px;opacity:0'; document.body.appendChild(ta); ta.select(); const ok=document.execCommand('copy'); ta.remove(); return ok; }catch(e){ return false; }
 }
-function modal(html,onMount){ const m=$('#modal'),c=$('#mcard'); c.innerHTML=html; m.classList.add('on'); S.modalOpen=true; Snd.popup(); if(onMount) onMount(c); }
-function closeModal(){ $('#modal').classList.remove('on'); S.modalOpen=false; }
+function modal(html,onMount,lock){ const m=$('#modal'),c=$('#mcard'); c.innerHTML=html; m.classList.add('on'); S.modalOpen=true; S.modalLock=!!lock; Snd.popup(); if(onMount) onMount(c); }
+function closeModal(){ $('#modal').classList.remove('on'); S.modalOpen=false; S.modalLock=false; }
 const ENV_SVG=`<svg class="env-deco" viewBox="0 0 80 80"><defs><linearGradient id="envg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff6b4a"/><stop offset="1" stop-color="#c4001a"/></linearGradient></defs><rect x="14" y="8" width="52" height="66" rx="9" fill="url(#envg)" stroke="#ffd84a" stroke-width="3"/><path d="M14 26 Q40 44 66 26 L66 17 Q66 8 57 8 H23 Q14 8 14 17 Z" fill="#ff8a6a"/><circle cx="40" cy="36" r="11" fill="#ffd84a" stroke="#e59b00" stroke-width="2"/><text x="40" y="41" font-size="13" text-anchor="middle" fill="#b36b00" font-weight="900">砍</text></svg>`;
 
 /* ================= START SCREEN ================= */
@@ -1033,24 +1155,31 @@ function setTool(i){ S.tool=i; document.querySelectorAll('.tchip').forEach((x,j)
   const cur=`url("data:image/svg+xml,${encodeURIComponent(svg)}") ${hs}, pointer`; stage.style.cursor=cur; $('#btnChop').style.cursor=cur; }
 
 function startGame(){
+  if(window.CAMP) CAMP.stop();
+  S.mode='free'; S.lvl=null; HK={}; E=108; PTS=PTS_FREE; S.types=null; S.slots=null;
+  setupRound();
+  if(S.autoScene) S.scene=Math.floor(Math.random()*SCENES.length);
+  setScene(S.scene,false);
+  SLOTS.forEach((_,i)=>later(()=>spawnBubble(i),150+i*120));
+  later(()=>stoast('帮我砍一刀，砍掉领导的‘再简单说两句’！',2600),500);
+}
+function setupRound(){
   clearTimers(); closeModal(); if(endFx){clearInterval(endFx); endFx=null;}
-  resetState();
+  resetState(); S.inviteCdMs=8000;
   const L=LEADERS[S.leader];
   S.sur=cleanSur($('#surInput').value); saveSur();
   $('#bossName').textContent=nameOf();
   leaderWrap.className='leader-wrap'; leaderWrap.innerHTML=leaderSVG(L);
-  if(S.autoScene) S.scene=Math.floor(Math.random()*SCENES.length);
-  setScene(S.scene,false);
+  stage.className='stage'; $('#lvTimer').className='lv-timer'; $('#btnScene').style.display=S.mode==='free'?'':'none';
+  $('#inviteBadge').textContent='加速';
   $('#toolbar').innerHTML=TOOLS.map((T,i)=>`<button class="tchip" data-i="${i}" aria-label="${T.n}">${toolSVG(T.k)}${T.n}</button>`).join('');
   setTool(S.tool);
   zone.innerHTML=''; bubbles=[]; $('#colleagueLayer').innerHTML=''; hitLayer.innerHTML='';
-  SLOTS.forEach((_,i)=>later(()=>spawnBubble(i),150+i*120));
   S.panic=0; later(begTick,1600); $('#leaderSay').classList.remove('on');
   $('#btnChop').disabled=false; $('#combo').classList.remove('on');
   updateUI(true);
   show('screen-game');
   requestAnimationFrame(()=>{ const t=$('#toolbar .tchip.sel'); if(t) t.scrollIntoView({inline:'center',block:'nearest'}); });
-  later(()=>stoast('帮我砍一刀，砍掉领导的‘再简单说两句’！',2600),500);
 }
 
 function updateUI(instant){
@@ -1063,22 +1192,30 @@ function updateUI(instant){
   updatePanic();
   $('#chopCount').textContent=S.chops; $('#helpCount').textContent=S.helps; $('#popCount').textContent=S.popTotal; $('#coinCount').textContent=S.coins;
   const sub=$('#chopSub');
-  sub.textContent = S.done ? '砍价成功！' : p>=99.99 ? '就差0.01%！再砍一下！' : p>=99 ? '马上就好（真的）' : S.chops===0 ? '免费 · 首刀必暴击' : '免费 · 每一刀都算数';
+  sub.textContent = S.lost ? '差一点点 · 再试一次' : S.done ? (S.mode==='camp'?'本关完成！':'砍价成功！') : (S.mode==='camp'&&HK.sub) ? HK.sub() : p>=99.99 ? '就差0.01%！再砍一下！' : p>=99 ? '马上就好（真的）' : S.chops===0 ? '免费 · 首刀必暴击' : '免费 · 每一刀都算数';
 }
 
 function spawnBubble(slot){
   if(!S.playing||S.done) return;
   if(bubbles.some(b=>b.slot===slot&&b.alive)) return;
-  const used=bubbles.map(b=>b.type.k); let pool=BUBBLES.filter(b=>!used.includes(b.k)); if(!pool.length) pool=BUBBLES;
-  const type=rnd(pool); const [x,y]=SLOTS[slot];
-  const el=document.createElement('button'); el.className='bubble spawn'; el.setAttribute('aria-label','砍掉'+type.t);
-  el.style.left=(x+(Math.random()*6-3))+'%'; el.style.top=(y+(Math.random()*6-3))+'%';
-  el.innerHTML=`<span class="bin" style="--c1:${type.c[0]};--c2:${type.c[1]};--c3:${type.c[2]};--dur:${(2.4+Math.random()*1.4).toFixed(2)}s;--dl:-${(Math.random()*2).toFixed(2)}s"><i>${type.ic}</i>${type.t}</span>`;
-  const b={el,slot,type,alive:true,targeted:false};
+  const TY=S.types||BUBBLES, SL=S.slots||SLOTS;
+  const used=bubbles.map(b=>b.type.k); let pool=TY.filter(b=>!used.includes(b.k)); if(!pool.length) pool=TY;
+  const type=rnd(pool); const [x,y]=SL[slot];
+  return makeBubble(type,{slot,left:(x+(Math.random()*6-3))+'%',top:(y+(Math.random()*6-3))+'%'});
+}
+function makeBubble(type,o={}){
+  const el=document.createElement('button'); el.className='bubble spawn'+(o.cls?' '+o.cls:''); el.setAttribute('aria-label','砍掉'+type.t);
+  el.style.left=o.left; el.style.top=o.top;
+  const who=o.who?`<em class="who"></em>`:'';
+  el.innerHTML=`<span class="bin" style="--c1:${type.c[0]};--c2:${type.c[1]};--c3:${type.c[2]};--dur:${(2.4+Math.random()*1.4).toFixed(2)}s;--dl:-${(Math.random()*2).toFixed(2)}s">${who}${o.noIcon?'':`<i>${type.ic}</i>`}<span class="bt"></span></span>`;
+  el.querySelector('.bt').textContent=type.t; if(o.who) el.querySelector('.who').textContent=o.who;
+  const b={el,slot:o.slot==null?null:o.slot,type,alive:true,targeted:false};
   el.addEventListener('pointerdown',ev=>{ev.preventDefault(); ev.stopPropagation(); chop(b);});
   el.addEventListener('click',ev=>{ if(ev.detail===0) chop(b); }); // keyboard activation
   zone.appendChild(el); bubbles.push(b);
+  if(HK.decorate) HK.decorate(b,o);
   setTimeout(()=>el.classList.remove('spawn'),460);
+  return b;
 }
 function pickTarget(pref){
   if(pref&&pref.alive&&!pref.targeted) return pref;
@@ -1089,18 +1226,18 @@ function stagePos(el){ const r=el.getBoundingClientRect(), s=stage.getBoundingCl
 function popBubble(b,silent,mode){
   if(!b.alive) return; b.alive=false;
   const [cx,cy]=center(b.el);
-  S.popped[b.type.k]++; S.popTotal++;
-  if(mode==='slice'){ sliceBubble(b,cx,cy); FX.burst(cx,cy,{n:10,kinds:['star','dot'],colors:['#fff','#bfe9ff','#fff6a0'],speed:240,g:200,size:8,life:.6}); later(()=>spawnBubble(b.slot),420+Math.random()*260); return; }
+  S.popped[b.type.k]=pc(b.type.k)+1; S.popTotal++;
+  if(mode==='slice'){ sliceBubble(b,cx,cy); FX.burst(cx,cy,{n:10,kinds:['star','dot'],colors:['#fff','#bfe9ff','#fff6a0'],speed:240,g:200,size:8,life:.6}); if(b.slot!=null) later(()=>spawnBubble(b.slot),420+Math.random()*260); return; }
   b.el.classList.add('popping');
   if(!silent) Snd.pop();
   FX.burst(cx,cy,{n:16,kinds:['dot','star','conf'],colors:[b.type.c[0],b.type.c[1],'#fff','#ffd84a'],speed:280,g:400,size:9,life:.7});
   FX.add({kind:'ring',x:cx,y:cy,vx:0,vy:0,g:0,life:.35,size:18,color:'rgba(255,255,255,.95)',drag:1,proj:1});
   setTimeout(()=>{b.el.remove(); bubbles=bubbles.filter(x=>x!==b);},380);
-  later(()=>spawnBubble(b.slot),300+Math.random()*260);
+  if(b.slot!=null) later(()=>spawnBubble(b.slot),300+Math.random()*260);
 }
 function pieHalfSVG(right){ const u=uid(); return `<svg viewBox="0 0 40 40"><defs><clipPath id="pc${u}"><rect x="${right?20:0}" y="0" width="20" height="40"/></clipPath></defs><g clip-path="url(#pc${u})"><circle cx="20" cy="20" r="17" fill="#f6c26b" stroke="#c7812e" stroke-width="4"/><circle cx="20" cy="20" r="11" fill="#ffdf8a"/><path d="M11 16 L29 16 M10 22 L30 22 M15 11 L25 29 M25 11 L15 29" stroke="#d9963e" stroke-width="2"/><ellipse cx="14" cy="12" rx="5" ry="2.5" fill="#fff" opacity=".5"/></g><path d="M20 3 V37" stroke="#fff3c4" stroke-width="1.5" opacity="${right?0:.9}"/></svg>`; }
 function sliceBubble(b,cx,cy){
-  ['l','r'].forEach(sd=>{ const h=b.el.cloneNode(true); h.className='bubble half half-'+sd; h.removeAttribute('aria-label'); h.tabIndex=-1; zone.appendChild(h); setTimeout(()=>h.remove(),800); });
+  ['l','r'].forEach(sd=>{ const h=b.el.cloneNode(true); h.className=b.el.className.replace(/\b(spawn|glow|wrong)\b/g,'')+' half half-'+sd; h.removeAttribute('aria-label'); h.tabIndex=-1; zone.appendChild(h); setTimeout(()=>h.remove(),800); });
   b.el.remove(); bubbles=bubbles.filter(x=>x!==b);
   if(b.type.k==='pie'){ const s=stage.getBoundingClientRect();
     [0,1].forEach(r=>{ const d=document.createElement('div'); d.className='pie-half '+(r?'pie-r':'pie-l'); d.innerHTML=pieHalfSVG(r); d.style.left=(cx-s.left)+'px'; d.style.top=(cy-s.top)+'px'; hitLayer.appendChild(d); setTimeout(()=>d.remove(),900); }); }
@@ -1157,10 +1294,12 @@ function leaderReact(o){
   // dialogue
   const L=LEADERS[S.leader], canSay=performance.now()-sayAt>650, R0=Math.random(); let line=null;
   if(o.crit) line=rnd(CRIT_SAY);
-  else if(o.small){ if(R0<.35&&canSay) line=o.type?rnd((L.bsay&&L.bsay[o.type])||BSAY[o.type]):rnd(GEN_SAY); }
+  else if(o.small){ if(R0<.35&&canSay) line=o.type?rnd((L.bsay&&L.bsay[o.type])||BSAY[o.type]||GEN_SAY):rnd(GEN_SAY); }
   else if(canSay){
-    if(lv>=3&&R0<.4) line=rnd(BEG);
-    else if(o.type&&R0<.8) line=rnd((L.bsay&&L.bsay[o.type])||BSAY[o.type]);
+    if(o.say) line=o.say;
+    else if(lv>=3&&R0<.4) line=rnd(BEG);
+    else if(S.lvl&&S.lvl.say&&R0<.62&&R0>=.4) line=rnd(S.lvl.say);
+    else if(o.type&&R0<.8) line=rnd((L.bsay&&L.bsay[o.type])||BSAY[o.type]||GEN_SAY);
     else if(o.tool==='knife'&&R0<.9) line=rnd(KNIFE_SAY);
     else line=Math.random()<.5?rnd(L.say):rnd(GEN_SAY);
   }
@@ -1211,27 +1350,30 @@ function impactFx(T,x,y){
   }
 }
 
+function gain(u){ if(HK.gain) u=HK.gain(u); const before=pctOf(S.effort); S.effort=Math.max(0,Math.min(E,S.effort+u)); return pctOf(S.effort)-before; }
 function chop(pref){
   if(!S.playing||S.done||S.modalOpen) return;
   Snd.init();
+  const src=pref?'tap':'button';
+  let b; if(HK.pick){ b=HK.pick(pref,src); if(b===false) return; } else b=pickTarget(pref);
   const now=performance.now(); S.combo = now-S.lastChop<700 ? S.combo+1 : 1; S.lastChop=now;
   S.chops++;
-  let units=1, crit=false, first=S.chops===1;
+  let units=1, crit=false; const first=S.mode==='free'&&S.chops===1;
   if(first){units=8; crit=true;} else if(Math.random()<.12){units=2; crit=true;}
-  const before=pctOf(S.effort);
-  S.effort=Math.min(E,S.effort+units);
-  const after=pctOf(S.effort), delta=after-before;
-  const T=TOOLS[S.tool]; const b=pickTarget(pref); if(b) b.targeted=true;
+  if(HK.units) units=HK.units(b,src,units,crit);
+  const delta=gain(units);
+  const T=TOOLS[S.tool]; if(b&&!b.boss) b.targeted=true;
   Snd.tool(T.k); if(crit) Snd.crit();
-  toolHit(T,b,(x)=>{ if(b) popBubble(b,false,T.k==='knife'?'slice':null); leaderReact({x:x+stage.getBoundingClientRect().left,crit,tool:T.k,type:b&&b.type.k}); if(!b) bonkWord(stage.clientWidth/2,stage.clientHeight*.2,'空气也算一刀！'); });
+  toolHit(T,b,(x)=>{ if(b){ if(b.onHit) b.onHit(T,crit); else popBubble(b,false,T.k==='knife'?'slice':null); } leaderReact({x:x+stage.getBoundingClientRect().left,crit,tool:T.k,type:b&&b.type.k,say:b&&b.saySelf}); if(!b) bonkWord(stage.clientWidth/2,stage.clientHeight*.2,'空气也算一刀！'); });
   // button feedback
-  const btn=$('#btnChop'); btn.classList.add('press'); setTimeout(()=>btn.classList.remove('press'),90);
+  const btn=$('#btnChop'); if(!pref){ btn.classList.add('press'); setTimeout(()=>btn.classList.remove('press'),90); }
   const [bx,by]=center(btn);
-  if(crit||S.combo<6||S.chops%3===0) floatTxt(bx+(Math.random()-.5)*120,by-46-Math.random()*20,(crit&&!first?'暴击 ':'')+'+'+fmtDelta(delta)+'%',crit?'crit':'');
-  const gain=(crit?8:1)+Math.floor(Math.random()*3); S.coins+=gain;
-  FX.burst(bx,by-30,{n:crit?10:3,kinds:['coin'],dir:-Math.PI/2,spread:1.2,speed:crit?560:440,g:900,size:18,life:.7});
-  if(crit) FX.burst(bx,by-20,{n:18,kinds:['conf'],colors:CONF,dir:-Math.PI/2,spread:1.6,speed:560,g:600,size:9,life:1.2});
-  if(Math.random()<.3||crit) Snd.coin();
+  if(delta<0) floatTxt(bx+(Math.random()-.5)*120,by-50,'-'+fmtDelta(-delta)+'%','neg');
+  else if(delta>0&&(crit||S.combo<6||S.chops%3===0)) floatTxt(bx+(Math.random()-.5)*120,by-46-Math.random()*20,(crit&&!first?'暴击 ':'')+'+'+fmtDelta(delta)+'%',crit?'crit':'');
+  const gainC=delta>0?(crit?8:1)+Math.floor(Math.random()*3):0; S.coins+=gainC;
+  if(gainC) FX.burst(bx,by-30,{n:crit?10:3,kinds:['coin'],dir:-Math.PI/2,spread:1.2,speed:crit?560:440,g:900,size:18,life:.7});
+  if(crit&&delta>0) FX.burst(bx,by-20,{n:18,kinds:['conf'],colors:CONF,dir:-Math.PI/2,spread:1.6,speed:560,g:600,size:9,life:1.2});
+  if(gainC&&(Math.random()<.3||crit)) Snd.coin();
   const cb=$('#coinBox'); cb.classList.remove('bump'); void cb.offsetWidth; cb.classList.add('bump');
   if(navigator.vibrate) try{navigator.vibrate(crit?30:12)}catch(e){}
   // combo
@@ -1239,22 +1381,25 @@ function chop(pref){
   clearTimeout(chop.ct); chop.ct=setTimeout(()=>co.classList.remove('on'),900);
   if(S.combo>0&&S.combo%15===0) stoast(`${S.combo}连击！手速堪比抢红包🧧`);
   afterProgress(first);
-  if(!S.done && S.chops%7===0 && !first) stoast(rnd(LINES)());
-  else if(!S.done && S.chops%7===4 && b) stoast('砍掉「'+b.type.t+'」！'+b.type.toast,1800);
-  if(S.autoScene && !S.done && S.chops%18===0) setScene(S.scene+1,true);
+  if(S.mode==='free'){
+    if(!S.done && S.chops%7===0 && !first) stoast(rnd(LINES)());
+    else if(!S.done && S.chops%7===4 && b) stoast('砍掉「'+b.type.t+'」！'+(b.type.toast||''),1800);
+    if(S.autoScene && !S.done && S.chops%18===0) setScene(S.scene+1,true);
+  } else if(!S.done && HK.lines && S.chops%9===0) stoast(rnd(HK.lines)());
 }
 
 function afterProgress(first){
   updateUI();
   const p=pctOf(S.effort);
-  if(first){ later(()=>modal(`<span class="mtag">首刀暴击</span>${ENV_SVG}<h2>一刀砍掉</h2><div class="mbig">${pctDisp().toFixed(2)}<small>%</small></div><p>${esc(shortOf())}头顶的「画饼」已经开始掉渣！<br>继续砍，砍到100%领导变神仙～</p><div class="mbtns"><button class="mbtn" data-a="close">继续砍</button><button class="mbtn ghost" data-a="invite">喊同事一起砍（更快）</button></div>`,bindModal),380); FX.rain(24,['coin','env','coin']); }
+  if(first&&S.mode==='free'){ later(()=>modal(`<span class="mtag">首刀暴击</span>${ENV_SVG}<h2>一刀砍掉</h2><div class="mbig">${pctDisp().toFixed(2)}<small>%</small></div><p>${esc(shortOf())}头顶的「画饼」已经开始掉渣！<br>继续砍，砍到100%领导变神仙～</p><div class="mbtns"><button class="mbtn" data-a="close">继续砍</button><button class="mbtn ghost" data-a="invite">喊同事一起砍（更快）</button></div>`,bindModal),380); FX.rain(24,['coin','env','coin']); }
   const M=(k,cond,fn)=>{ if(cond&&!S.ms[k]){S.ms[k]=1; fn();} };
   M('50',p>=50,()=>stoast('已砍一半！领导的饼开始掉渣了'));
   M('80',p>=80,()=>{stoast('80%！领导已经在考虑准时散会了'); FX.rain(20,['env','coin']); });
   M('95',p>=95,()=>stoast('95%！临时需求正在打包离开'));
   M('99',p>=99,()=>{stoast('已砍99%！胜利就在眼前（大概）'); FX.rain(16,['coin','conf','conf']);});
   M('999',p>=99.9,()=>stoast('已砍99.9%！就差最后一丢丢…'));
-  M('9999',pctDisp()>=99.99&&S.effort<E,()=>later(()=>{ if(S.done) return; modal(`<span class="mtag">仅差一点点</span><h2>还差</h2><div class="mbig">0.01<small>%</small></div><p>已砍掉 ${S.popped.temp} 次临时需求，还差0.01%就能准时下班！<br>喊同事助力，立刻加速！</p><div class="mbtns"><button class="mbtn" data-a="invite">喊同事助力</button><button class="mbtn ghost" data-a="close">我自己继续砍</button></div>`,bindModal); },160));
+  M('9999',S.mode==='free'&&pctDisp()>=99.99&&S.effort<E,()=>later(()=>{ if(S.done) return; modal(`<span class="mtag">仅差一点点</span><h2>还差</h2><div class="mbig">0.01<small>%</small></div><p>已砍掉 ${pc('temp')} 次临时需求，还差0.01%就能准时下班！<br>喊同事助力，立刻加速！</p><div class="mbtns"><button class="mbtn" data-a="invite">喊同事助力</button><button class="mbtn ghost" data-a="close">我自己继续砍</button></div>`,bindModal); },160));
+  if(HK.after&&!S.done) HK.after();
   if(S.effort>=E && !S.done) finish();
 }
 function bindModal(c){ c.querySelectorAll('[data-a]').forEach(b=>b.addEventListener('click',()=>{ Snd.ui(); closeModal(); if(b.dataset.a==='invite') invite(); })); }
@@ -1264,8 +1409,8 @@ function invite(){
   if(!S.playing||S.done) return;
   Snd.init();
   if(S.inviteCd>Date.now()){ gtoast(`同事们正在赶来的路上，${Math.ceil((S.inviteCd-Date.now())/1000)}秒后可再喊`); return; }
-  S.invites++; S.inviteCd=Date.now()+8000; Snd.invite();
-  const L=LEADERS[S.leader], bt=rnd(BUBBLES).t;
+  S.invites++; S.inviteCd=Date.now()+(S.inviteCdMs||8000); Snd.invite(); if(HK.onInvite) HK.onInvite();
+  const L=LEADERS[S.leader], bt=rnd(S.types||BUBBLES).t;
   const txt=`【砍领导一刀】我正在帮“${nameOf()}”砍掉「${bt}」，已砍${pctDisp().toFixed(2)}%，还差${remStr()}%！快来帮我砍一刀，一起准时下班！（纯属娱乐，角色均为虚构）`;
   copyText(txt).then(ok=>gtoast(ok?'助力文案已复制📋 同事们正在赶来帮砍！':'同事们收到召唤，正在赶来帮砍！'));
   const layer=$('#colleagueLayer'); const onStage=[...layer.children].map(x=>x.dataset.n);
@@ -1291,13 +1436,14 @@ function spawnColleague(C,side){
     if(!S.playing||S.done||!el.isConnected) return;
     n++; el.classList.remove('help'); void el.offsetWidth; el.classList.add('help');
     el.querySelector('.csay').textContent=rnd(['帮砍！','砍掉加班！','准点下班！','冲鸭！','再来一刀！','已读不回？砍！']);
-    const b=pickTarget(); if(b) b.targeted=true;
+    const b=HK.helpPick?HK.helpPick():pickTarget(); if(b&&!b.boss) b.targeted=true;
     const [cx,cy]=center(el); const s=stage.getBoundingClientRect();
     let tx,ty; if(b){[tx,ty]=center(b.el);} else {tx=s.left+s.width/2; ty=s.top+s.height*.2;}
     Snd.osc({f:700+Math.random()*200,f2:1200,d:.08,v:.12});
     FX.proj(cx,cy-20,tx,ty,.3,'heart','#ff6b9a',()=>{
-      if(b) popBubble(b); leaderReact({x:tx,type:b&&b.type.k,small:true});
-      if(!S.done){ const before=pctOf(S.effort); S.effort=Math.min(E,S.effort+1); S.helps++; S.coins+=2; const d=pctOf(S.effort)-before; floatTxt(cx,cy-40,'助力 +'+fmtDelta(d)+'%','small'); afterProgress(false); }
+      if(!S.playing||S.done) return;
+      if(b){ if(b.onHelp) b.onHelp(); else popBubble(b); } leaderReact({x:tx,type:b&&b.type.k,small:true});
+      if(!S.done){ const d=gain(HK.helpUnits?HK.helpUnits(b):1); S.helps++; S.coins+=2; if(d>0) floatTxt(cx,cy-40,'助力 +'+fmtDelta(d)+'%','small'); afterProgress(false); }
     },16);
     if(n<helpsTotal) later(doHelp,900+Math.random()*300);
     else later(()=>{ el.querySelector('.csay').textContent='下班见～'; el.style.transform=`translateX(${side==='l'?'-130%':'130%'})`; el.style.opacity=0; setTimeout(()=>el.remove(),600); },900);
@@ -1309,6 +1455,8 @@ function spawnColleague(C,side){
 function finish(){
   S.done=true; $('#btnChop').disabled=true; updateUI();
   closeModal();
+  if(S.mode==='camp'&&window.CAMP&&!CAMP.isFinal()){ CAMP.win(); return; }
+  if(S.mode==='camp'&&HK.onFinal) HK.onFinal();
   later(()=>{
     bubbles.forEach(b=>{ if(b.alive) popBubble(b,true); });
     leaderWrap.classList.remove(...REACT,'p1','p2','p3'); leaderWrap.classList.add('transform'); $('#flash').classList.add('on'); $('#leaderSay').classList.remove('on'); Snd.transform();
@@ -1323,8 +1471,13 @@ function showEnd(){
   const L=LEADERS[S.leader], secs=Math.round((Date.now()-S.started)/1000);
   $('#endLeader').className='angel'; $('#endLeader').innerHTML=leaderSVG(L); $('#endName').textContent='👼 '+angelOf();
   $('#endSub').textContent=`恭喜！${shortOf()}解锁‘不画饼’皮肤，全部门下班！`;
-  const P=S.popped;
-  $('#endStats').innerHTML=`🏆 你把「${esc(nameOf())}」砍成了「${esc(angelOf())}」<br>🔪 你一共砍了 <b>${S.chops}</b> 刀，同事助力 <b>${S.helps}</b> 次，用时 <b>${secs}</b> 秒<br>🥧 画饼 <b>${P.pie}</b> · 🌙 加班 <b>${P.ot}</b> · 📌 临时需求 <b>${P.temp}</b><br>👀 已读不回 <b>${P.read}</b> · 📅 周末开会 <b>${P.wk}</b> · 🎤 我简单说两句 <b>${P.talk}</b><br>💰 获得金币 <b>${S.coins}</b>（可兑换：准时下班 ×1）`;
+  const camp=S.mode==='camp'; document.getElementById('screen-end').classList.toggle('camp-final',camp);
+  $('.end-tag').textContent=camp?'职场晋级 · 全部通关':'砍价成功 · 100%';
+  $('.end-title').innerHTML=camp?'恭喜晋升为<br>「准时下班大师」':'恭喜！领导已变身<br>「神仙领导」';
+  $('#btnReplay').textContent=camp?'返回晋级地图':'再砍一个领导'; $('#btnAgain').textContent=camp?'再战Boss关':'原班人马再来';
+  if(camp) $('#endSub').textContent=`${shortOf()}已变身「${angelOf()}」：不画饼、不加班、准时散会！`;
+  if(camp&&window.CAMP){ $('#endStats').innerHTML=`🏆 你把「${esc(nameOf())}」的「超级大饼」砍成了饼干屑<br>🔪 Boss关砍了 <b>${S.chops}</b> 刀，同事助力 <b>${S.helps}</b> 次，用时 <b>${secs}</b> 秒<br>💰 获得金币 <b>${S.coins}</b>（可兑换：准时下班 ×1）`+CAMP.summaryHTML(); }
+  else $('#endStats').innerHTML=`🏆 你把「${esc(nameOf())}」砍成了「${esc(angelOf())}」<br>🔪 你一共砍了 <b>${S.chops}</b> 刀，同事助力 <b>${S.helps}</b> 次，用时 <b>${secs}</b> 秒<br>🥧 画饼 <b>${pc('pie')}</b> · 🌙 加班 <b>${pc('ot')}</b> · 📌 临时需求 <b>${pc('temp')}</b><br>👀 已读不回 <b>${pc('read')}</b> · 📅 周末开会 <b>${pc('wk')}</b> · 🎤 我简单说两句 <b>${pc('talk')}</b><br>💰 获得金币 <b>${S.coins}</b>（可兑换：准时下班 ×1）`;
   show('screen-end'); document.getElementById('screen-end').scrollTop=0;
   Snd.win(); FX.rain(60,['coin','env','conf','conf','coin']);
   if(endFx) clearInterval(endFx);
@@ -1339,18 +1492,21 @@ $('#toolbar').addEventListener('click',e=>{const b=e.target.closest('.tchip'); i
 $('#btnScene').addEventListener('click',()=>{Snd.init(); Snd.ui(); S.autoScene=false; setScene(S.scene+1,true);});
 function syncMute(){ $('#icoSound').style.display=Snd.muted?'none':''; $('#icoMute').style.display=Snd.muted?'':'none'; }
 $('#btnMute').addEventListener('click',()=>{ Snd.init(); Snd.setMuted(!Snd.muted); syncMute(); gtoast(Snd.muted?'已静音 🔇':'声音已开启 🔊',1200); });
-$('#btnHome').addEventListener('click',()=>{ Snd.init(); Snd.ui(); if(S.chops===0){ goHome(); return; }
+$('#btnHome').addEventListener('click',()=>{ Snd.init(); Snd.ui();
+  if(S.mode==='camp'&&window.CAMP){ if(S.done||S.chops===0){ CAMP.showMap(); return; } modal(`<span class="mtag">返回晋级地图？</span><h2>本关进度不会保存</h2><p>领导的「画饼」可能会长回来哦～</p><div class="mbtns"><button class="mbtn" data-b="stay">继续闯关</button><button class="mbtn ghost" data-b="leave">返回地图</button></div>`,c=>{ c.querySelector('[data-b=stay]').onclick=()=>closeModal(); c.querySelector('[data-b=leave]').onclick=()=>{closeModal(); CAMP.showMap();}; }); return; }
+  if(S.chops===0){ goHome(); return; }
   modal(`<span class="mtag">确定要走吗</span><h2>已砍 ${pctDisp().toFixed(2)}%</h2><p>现在离开，领导的「画饼」可就长回来了！</p><div class="mbtns"><button class="mbtn" data-b="stay">继续砍</button><button class="mbtn ghost" data-b="leave">返回首页</button></div>`,c=>{
     c.querySelector('[data-b=stay]').onclick=()=>closeModal(); c.querySelector('[data-b=leave]').onclick=()=>{closeModal(); goHome();}; }); });
-function goHome(){ S.playing=false; clearTimers(); renderStart(); show('screen-start'); $('#screen-start').scrollTop=0; }
-$('#btnReplay').addEventListener('click',()=>{ Snd.ui(); goHome(); });
-$('#btnAgain').addEventListener('click',()=>{ Snd.ui(); startGame(); });
+function goHome(){ S.playing=false; clearTimers(); if(window.CAMP) CAMP.stop(); renderStart(); show('screen-start'); $('#screen-start').scrollTop=0; }
+$('#btnReplay').addEventListener('click',()=>{ Snd.ui(); if(S.mode==='camp'&&window.CAMP) CAMP.showMap(); else goHome(); });
+$('#btnAgain').addEventListener('click',()=>{ Snd.ui(); if(S.mode==='camp'&&window.CAMP) CAMP.startLevel(S.level); else startGame(); });
 $('#btnShare').addEventListener('click',()=>{ const L=LEADERS[S.leader];
+  if(S.mode==='camp'){ copyText(`我在「砍领导一刀·职场晋级」6关全通，晋升「准时下班大师」！把“${nameOf()}”砍成了「${angelOf()}」（纯属娱乐，角色均为虚构）`).then(ok=>gtoast(ok?'战绩已复制，快去炫耀吧！':'复制失败，截图分享也可以～')); return; }
   copyText(`我在「砍领导一刀」里砍了${S.chops}刀、喊了${S.invites}次同事，把“${nameOf()}”砍成了「${angelOf()}」：不画饼、不加班、准时散会！（纯属娱乐，角色均为虚构）`).then(ok=>gtoast(ok?'战绩已复制，快去炫耀吧！':'复制失败，截图分享也可以～')); });
-$('#modal').addEventListener('click',e=>{ if(e.target.id==='modal') closeModal(); });
+$('#modal').addEventListener('click',e=>{ if(e.target.id==='modal'&&!S.modalLock) closeModal(); });
 document.addEventListener('keydown',e=>{
   if(!$('#screen-game').classList.contains('active')) return;
-  if(S.modalOpen){ if(e.key==='Escape') closeModal(); return; }
+  if(S.modalOpen){ if(e.key==='Escape'&&!S.modalLock) closeModal(); return; }
   if((e.code==='Space'||e.key===' ')&&!e.repeat){ e.preventDefault(); chop(); }
   else if(e.key==='i'||e.key==='I') invite();
   else if(/^[1-8]$/.test(e.key)) setTool(+e.key-1);
@@ -1359,7 +1515,281 @@ document.addEventListener('visibilitychange',()=>{ if(document.hidden&&Snd.ctx) 
 document.addEventListener('gesturestart',e=>e.preventDefault());
 
 FX.init(); syncMute(); renderStart();
-window.__KL={S,E,pctOf,chop,invite}; // for testing/debug
+window.__KL={S,get E(){return E},pctOf,chop,invite,get bubbles(){return bubbles}}; // for testing/debug
+</script>
+<script>
+/* ================= 职场晋级 CAMPAIGN ================= */
+(function(){
+const SCI={office:0,meeting:1,pantry:2,party:3,bus:4,night:5};
+const RANKS=['实习生','正式工','业务骨干','小组长','部门经理','总监','准时下班大师'];
+const C={org:['#ffbd5a','#f57c00','#b35400'],blu:['#8d9aff','#4a55d6','#2a2f8f'],pnk:['#ff86b0','#e91e63','#9c0f44'],sky:['#79d8ff','#1e9be0','#0b5f94'],grn:['#94e685','#35b24a','#1c6e2a'],pur:['#cda4ff','#8e44d9','#56208f'],red:['#ff8a80','#e53935','#9a1010'],gry:['#e9ecef','#adb5bd','#6c757d'],gld:['#ffe27a','#f5a300','#a86400']};
+const T=(k,t,ic,c,toast)=>({k,t,ic,c,toast});
+const B0=BUBBLES.reduce((m,b)=>(m[b.k]=b,m),{});
+const TY={
+ l1:[B0.pie,B0.talk,T('align','对齐一下','🎯',C.sky,'对齐完毕，散会！'),T('grid','格局打开','🌀',C.pur,'格局已关闭，下班！'),T('mon','周一要有冲劲','💪',C.grn,'冲劲留给下班路上！')],
+ l2:[B0.talk,T('ppt','再过一遍PPT','📊',C.blu,'PPT翻到最后一页了！'),T('topic','顺便说个事','💬',C.sky,'这个事下次再顺便！'),T('sum','最后总结一下','📝',C.grn,'总结：散会！')],
+ more:T('more','再补充一点','➕',C.red,'补充已驳回！'),
+ bad:[T('all','@所有人','📢',C.red),T('reply','收到请回复','🔔',C.red),T('tmr','明早要','⏰',C.red),T('zai','在吗','👀',C.red),T('wkd','周末辛苦下','📅',C.red),T('vc','方便语音吗','📞',C.red)],
+ good:[T('ok','收到','✅',C.gry),T('p1','+1','👍',C.gry),T('thx','辛苦了','🌙',C.gry),T('gn','晚安','😴',C.gry),T('like','👍👍','👍',C.gry)],
+ l4:[B0.temp,T('urgent','很急','🔥',C.red,'不急了不急了！'),T('small','小改动','🔧',C.blu,'小改动已拒收！'),T('black','五彩斑斓的黑','🎨',C.pur,'黑还是那个黑！'),T('logo','logo再大点','🔍',C.org,'logo已恢复原尺寸！')],
+ l5:[T('sing','领导先唱一首','🎤',C.pur,'麦克风已静音！'),T('kpi','车上顺便汇报','📈',C.blu,'车上只聊风景！'),B0.ot,T('speech','到站前讲两句','📣',C.org,'到站直接下车！'),T('photo','合影站C位','📸',C.grn,'C位留给大家！')],
+ l6:[T('ipo','明年上市','📈',C.gld),T('opt','期权','🎫',C.org),T('fb','福报','🙏',C.pnk),T('bonus','年终奖翻倍','🧧',C.red)]
+};
+Object.assign(BSAY,{
+ align:['对齐…对齐完了','那就先不对齐了'],grid:['格局…先收一收','我格局小了？'],mon:['周一…慢慢来','冲劲留到周二？'],
+ ppt:['PPT…就到这页吧','最后一页了，真的！'],topic:['这事…回头再说','不顺便了不顺便了'],sum:['总结一句：散会！','我不总结了！'],more:['我…我就补充一点点！','补充…下次再补充','那不补充了？'],
+ all:['@所有人…手滑了','这条撤回！撤回！'],reply:['不用回复了！','收到就行…不用回'],tmr:['明早…后天也行','不急不急，下周要'],zai:['我不在…我也不在','没事没事，你睡吧'],wkd:['周末休息！','是我打错字了'],vc:['不语音了，打字吧','明天再说！'],
+ ok:['诶？这条是正常消息啊～'],p1:['+1 不用砍吧？'],thx:['辛苦了是好话呀～'],gn:['晚安也砍？'],like:['点赞也砍？'],
+ urgent:['其实…也没那么急','下周再急吧'],small:['真的是小改动…吧','那不改了'],black:['黑色…就黑色吧','我也不知道是啥黑'],logo:['logo…这么大挺好','就这个尺寸！'],
+ sing:['那我…不唱了','我唱一句就好？'],kpi:['团建不谈工作！','汇报下车再说'],speech:['我就说一句…不说了','到站就散！'],photo:['C位给你们！','我站边上就行'],
+ ipo:['上市…在路上了！','明年一定！'],opt:['期权…会有的','画在饼里了'],fb:['这不是福报吗？','那…不报了'],bonus:['翻倍…翻个面？','年终奖…在路上'],boss:['我的超级大饼！','饼…饼要碎了！','这可是明年的饼！']
+});
+const LEVELS=[
+ {name:'办公室·周一早会',short:'周一早会',scene:'office',E:52,time:0,cls:'lv-office',types:TY.l1,slots:null,
+  goal:'砍到100%，让周一早会准时结束',rule:'点下方「砍领导一刀」或直接点头顶气泡都能砍；砍不动就喊同事！',
+  say:['周一嘛，先开个短会','我简单说两句…就两句','大家精神一点！','这周我们要对齐一下'],
+  lines:['周一早会已缩短至「早」','早会进度条正在飞奔','同事们已经在收拾笔记本了'],win:'好…好，散会！大家去忙吧！',tip:'教程关'},
+ {name:'会议室·马拉松会议',short:'马拉松会议',scene:'meeting',E:80,time:55,cls:'lv-meet',types:TY.l2,slots:[[18,28],[82,28],[50,44],[26,80],[74,80]],
+  goal:'「散会」倒计时结束前砍到100%',rule:'领导会不停冒出红色「再补充一点」，它会拖慢进度——优先砍它！（大按钮会自动先砍它）',
+  say:['我再补充一点','会议才刚开始嘛','还有最后几页','谁有问题？没问题我继续'],
+  lines:['会议纪要已经写好：散会','投影仪都开始发烫了','隔壁会议室已经散会了！'],win:'那…今天就先到这，散会！',tip:'限时55秒'},
+ {name:'深夜工作群',short:'深夜工作群',scene:'night',E:58,time:0,cls:'lv-chat',types:TY.bad,slots:null,
+  goal:'砍掉深夜群里的坏消息，砍到100%',rule:'只点红名的「@所有人」「在吗」「明早要」；误点「收到」「+1」「辛苦了」会扣进度。大按钮自动砍最早的坏消息',
+  say:['这么晚还有人在吗？','我就发一条…','大家早点休息（发完这条）','@所有人…算了'],
+  lines:['群消息已设为免打扰','深夜工作群正在降温','手机终于可以放下了'],win:'大家晚安！明天再说！',tip:'精准点击'},
+ {name:'茶水间·临时需求',short:'临时需求',scene:'pantry',E:85,time:0,cls:'lv-req',types:TY.l4,slots:[[20,26],[52,20],[82,28],[30,72],[70,70]],
+  goal:'清空临时需求，砍到100%',rule:'需求会闪躲，砍一刀还会裂成两个小需求；连击×8可一口气清掉所有小需求！',
+  say:['这个需求很简单的','就改一点点','顺手做一下嘛','今天能上线吧？'],
+  lines:['需求池已经见底了','产品经理默默关上了需求文档','茶水间恢复了宁静'],win:'需求…都不急，喝茶喝茶！',tip:'连击清屏'},
+ {name:'团建大巴',short:'团建大巴',scene:'bus',E:105,time:60,cls:'lv-bus',types:TY.l5,slots:[[18,30],[82,30],[50,46],[28,82],[72,82]],
+  goal:'60秒内砍到100%',rule:'大巴一路颠簸，气泡会跟着晃；直接点中气泡算3倍，大按钮只算半刀！',
+  say:['团建嘛，放松一下','来，我先唱一首','到站之前我讲两句','师傅开稳一点！'],
+  lines:['司机师傅已切换到放松歌单','大巴离快乐目的地越来越近','车窗外风景正好'],win:'好好好，今天纯玩，不谈工作！',tip:'限时60秒 · 考准度'},
+ {name:'年会舞台·Boss关',short:'年会Boss',scene:'party',E:100,time:0,cls:'lv-boss',types:TY.l6,slots:[[13,46],[87,46],[14,86],[86,86]],
+  goal:'砍碎领导的「超级大饼」',rule:'大饼有血条和护盾；护盾出现时喊同事助力可破盾（自己连砍也能慢慢破）',
+  say:['明年，我们一定上市！','这个饼，是超级大饼！','大家的福报在后头！','年终奖…在路上了'],
+  lines:['台下同事开始鼓掌','超级大饼出现了裂纹','年会抽奖环节马上开始'],win:'',tip:'Boss关'}
+];
+function load(){ try{ const o=JSON.parse(localStorage.getItem('kl_camp')||'{}'); return {done:Array.isArray(o.done)?o.done.map(Boolean).slice(0,6):[],best:Array.isArray(o.best)?o.best.map(x=>+x||0).slice(0,6):[]}; }catch(e){ return {done:[],best:[]}; } }
+let P=load();
+function save(){ try{ localStorage.setItem('kl_camp',JSON.stringify(P)); }catch(e){} }
+const unlocked=i=>i===0||!!P.done[i-1];
+function rankIdx(){ let n=0; while(n<6&&P.done[n]) n++; return n; }
+let cur=0, tok=0, raf=0, running=false, lastT=0;
+const bsLv=()=>LEVELS[cur];
+function secs(){ return Math.round((Date.now()-S.started)/1000); }
+
+/* ---------- map ---------- */
+function renderMap(){
+  const r=rankIdx();
+  $('#rankNow').textContent=RANKS[r];
+  $('#mapBoss').textContent=nameOf(); $('#mapTool').textContent=TOOLS[S.tool].n;
+  let h=`<div class="rung cap ${P.done[5]?'done':''}"><span class="lvno">🏅</span><span class="info"><b>准时下班大师</b><small>${P.done[5]?'已达成！全部门准时下班':'通关年会Boss关即可晋升'}</small></span><span class="st">${P.done[5]?'<span class="ok">已晋升</span>':''}</span></div>`;
+  for(let i=5;i>=0;i--){ const L=LEVELS[i], ul=unlocked(i), dn=!!P.done[i], cu=ul&&!dn&&i===r;
+    h+=`<button class="rung ${ul?'':'locked'} ${dn?'done':''} ${cu?'cur':''} ${i===5?'bossr':''}" data-i="${i}" aria-label="第${i+1}关 ${L.name}${ul?'':'（未解锁）'}"><span class="lvno">第<big>${i+1}</big>关</span><span class="info"><b>${L.name}</b><small>晋升：${RANKS[i]} → ${RANKS[i+1]} · ${L.tip}</small></span><span class="st">${dn?`<span class="ok">✓ 已通关</span>${P.best[i]?`<br><small>最快${P.best[i]}s</small>`:''}`:ul?'<span class="go">开砍</span>':'🔒'}</span></button>`; }
+  $('#ladder').innerHTML=h;
+}
+function showMap(){ stop(); S.playing=false; clearTimers(); closeModal(); S.mode='camp';
+  S.sur=cleanSur($('#surInput').value);
+  renderMap(); show('screen-map');
+  const m=$('#screen-map'); requestAnimationFrame(()=>{ const c=m.querySelector('.rung.cur'); if(c) c.scrollIntoView({block:'center'}); else m.scrollTop=0; });
+}
+$('#ladder').addEventListener('click',e=>{ const b=e.target.closest('.rung[data-i]'); if(!b) return; Snd.init(); const i=+b.dataset.i;
+  if(!unlocked(i)){ Snd.ui(); gtoast('先通关上一关，才能晋升到这里哦～'); return; } Snd.ui(); startLevel(i); });
+$('#btnCamp').addEventListener('click',()=>{ Snd.init(); Snd.ui(); showMap(); });
+$('#mapBack').addEventListener('click',()=>{ Snd.ui(); goHome(); });
+$('#btnResetCamp').addEventListener('click',()=>{ Snd.ui();
+  modal(`<span class="mtag">重置进度</span><h2>确定从实习生重新开始？</h2><p>所有关卡通关记录会被清空（领导不会记仇的）。</p><div class="mbtns"><button class="mbtn" data-b="no">再想想</button><button class="mbtn ghost" data-b="yes">确定重置</button></div>`,c=>{
+    c.querySelector('[data-b=no]').onclick=()=>closeModal();
+    c.querySelector('[data-b=yes]').onclick=()=>{ closeModal(); P={done:[],best:[]}; save(); renderMap(); gtoast('进度已重置，从实习生重新出发！'); }; }); });
+
+/* ---------- level flow ---------- */
+function stop(){ if(HK&&HK.cleanup){ try{HK.cleanup();}catch(e){} HK.cleanup=null; } tok++; running=false; if(raf) cancelAnimationFrame(raf); raf=0; const t=document.getElementById('lvTimer'); if(t) t.className='lv-timer'; }
+function startLevel(i){
+  if(!unlocked(i)) i=0;
+  stop(); cur=i; const L=LEVELS[i];
+  S.mode='camp'; S.level=i; S.lvl=L; E=L.E; PTS=PTS_SOFT; S.types=L.types; S.slots=L.slots;
+  HK=Object.assign({lines:L.lines.map(s=>()=>s)}, MECH[i]());
+  setupRound();
+  S.inviteCdMs=HK.inviteCd||8000;
+  S.scene=SCI[L.scene]; $('#scene').innerHTML=sceneSVG(L.scene); $('#scene').style.opacity=1;
+  $('#bossSub').textContent=`第${i+1}关 · ${L.name}`;
+  stage.classList.add(L.cls);
+  S.tLeft=L.time; renderTimer();
+  if(L.time) $('#lvTimer').classList.add('on');
+  if(HK.setup) HK.setup();
+  updateUI(true);
+  modal(`<span class="mtag">第${i+1}关 · ${RANKS[i]} → ${RANKS[i+1]}</span><h2>${L.name}</h2><div class="lvl-card-rule"><b>🎯 目标：</b>${L.goal}${L.time?`（限时 ${L.time} 秒）`:''}<br><b>📌 规则：</b>${L.rule}</div><div class="mbtns"><button class="mbtn" data-b="go">开始！</button><button class="mbtn ghost" data-b="map">返回晋级地图</button></div>`,c=>{
+    c.querySelector('[data-b=go]').onclick=()=>{ Snd.ui(); closeModal(); begin(); };
+    c.querySelector('[data-b=map]').onclick=()=>{ Snd.ui(); showMap(); }; },true);
+}
+function begin(){
+  const L=bsLv(); S.started=Date.now();
+  if(!HK.noSlots) (S.slots||SLOTS).forEach((_,k)=>later(()=>spawnBubble(k),150+k*120));
+  if(HK.begin) HK.begin();
+  running=true; const my=++tok; lastT=performance.now();
+  const loop=t=>{ if(my!==tok) return; const dt=Math.min(.1,Math.max(0,(t-lastT)/1000)); lastT=t;
+    if(S.playing&&!S.done&&!S.modalOpen){
+      if(L.time){ S.tLeft-=dt; renderTimer(); if(S.tLeft<=0){ S.tLeft=0; renderTimer(); lose(); return; } }
+      if(HK.tick) HK.tick(dt,t);
+    }
+    raf=requestAnimationFrame(loop); };
+  raf=requestAnimationFrame(loop);
+}
+function renderTimer(){ const el=$('#lvTimer'), L=bsLv(); if(!L||!L.time) return; const s=Math.max(0,Math.ceil(S.tLeft));
+  el.textContent=(cur===1?'⏱ 距离散会 ':'⏱ 距离到站 ')+s+'s'; el.classList.toggle('warn',s<=10&&s>0&&S.playing&&!S.done); }
+function recordWin(){ const t=secs(); P.done[cur]=true; if(!P.best[cur]||t<P.best[cur]) P.best[cur]=t; for(let k=0;k<6;k++) if(P.done[k]==null) P.done[k]=false; save(); }
+function win(){
+  stop(); recordWin(); const L=bsLv(), i=cur, t=secs();
+  leaderWrap.classList.remove(...REACT); showSay(L.win,2400);
+  bubbles.forEach(b=>{ if(b.alive&&!b.boss) popBubble(b,true); });
+  Snd.win(); FX.rain(36,['coin','env','conf','conf']);
+  later(()=>{
+    const nx=i<5;
+    modal(`<span class="mtag">通关成功 · 晋升！</span>${ENV_SVG}<h2>恭喜晋升「${RANKS[i+1]}」</h2><div class="mbig">第${i+1}关 ✓</div><p>「${L.name}」通关！用时 <b>${t}</b> 秒，砍了 <b>${S.chops}</b> 刀${S.helps?`，同事助力 <b>${S.helps}</b> 次`:''}。${nx?`<br>下一关：${LEVELS[i+1].name}`:''}</p><div class="mbtns">${nx?`<button class="mbtn" data-b="next">下一关 →</button>`:''}<button class="mbtn ${nx?'ghost':''}" data-b="map">返回晋级地图</button></div>`,c=>{
+      const n=c.querySelector('[data-b=next]'); if(n) n.onclick=()=>{ Snd.ui(); startLevel(i+1); };
+      c.querySelector('[data-b=map]').onclick=()=>{ Snd.ui(); showMap(); }; },true);
+  },900);
+}
+function lose(){
+  if(S.done) return; stop(); S.done=true; S.lost=true; $('#btnChop').disabled=true; updateUI();
+  const i=cur, p=Math.floor(pctOf(S.effort)*10)/10;
+  showSay(i===1?'那…这个会我们明天接着开？':'哎呀，到站了…下次再砍？',2400);
+  later(()=>{
+    modal(`<span class="mtag">差一点点！</span><h2>${i===1?'领导又补充了一点…':'大巴已经到站啦…'}</h2><div class="mbig">${p.toFixed(1)}<small>%</small></div><p>${S.chops?`已经砍了 <b>${S.chops}</b> 刀，超棒的！`:'还没来得及开砍呢～'}<br>小技巧：${i===1?'优先砍红色「再补充一点」，别忘了喊同事助力':'直接点中气泡算3倍，别只按大按钮'}。<br>再来一次，这次一定准时下班～</p><div class="mbtns"><button class="mbtn" data-b="retry">再试一次</button><button class="mbtn ghost" data-b="map">返回晋级地图</button></div>`,c=>{
+      c.querySelector('[data-b=retry]').onclick=()=>{ Snd.ui(); startLevel(i); };
+      c.querySelector('[data-b=map]').onclick=()=>{ Snd.ui(); showMap(); }; },true);
+  },700);
+}
+
+/* ---------- helpers ---------- */
+const alive=f=>bubbles.filter(b=>b.alive&&(!f||f(b)));
+function kill(b){ b.alive=false; b.el.remove(); bubbles=bubbles.filter(x=>x!==b); }
+function rng(a,b){ return a+Math.random()*(b-a); }
+
+/* ---------- per-level mechanics ---------- */
+const MECH=[
+/* L1 tutorial */ ()=>{ let step=0; return {
+  begin(){ later(()=>{ if(step===0){ stoast('👇 先点下面的「砍领导一刀」试试！',2600); $('#btnChop').classList.add('pulse'); } },700); },
+  after(){
+    if(step===0&&S.chops>=3){ step=1; $('#btnChop').classList.remove('pulse'); bubbles.forEach(b=>b.el.classList.add('glow')); stoast('👆 也可以直接点头顶发光的气泡！',2600); }
+    else if(step===1&&S.chops>=8){ step=2; bubbles.forEach(b=>b.el.classList.remove('glow')); $('#inviteBadge').textContent='点我'; stoast('👉 砍累了？点「喊同事助力」一起砍！',2600); }
+  },
+  decorate(b){ if(step===1) b.el.classList.add('glow'); },
+  onInvite(){ if(step>=2){ $('#inviteBadge').textContent='加速'; step=3; } },
+  sub(){ return step===0?'教程 · 先点我砍一刀':step===1?'教程 · 试试直接点气泡':step===2?'教程 · 喊同事助力更快':'快砍完了，冲！'; }
+}; },
+/* L2 marathon */ ()=>{ let acc=0; const spots=[[36,12],[64,12],[10,56],[90,56],[50,70]]; const drain=.3; let uiAcc=0;
+  const mores=()=>alive(b=>b.more);
+  function spawnMore(){ const used=mores().map(b=>b.spot); const free=spots.map((_,k)=>k).filter(k=>!used.includes(k)); if(!free.length) return; const k=rnd(free), [x,y]=spots[k];
+    const b=makeBubble(TY.more,{left:x+'%',top:y+'%',cls:'special'}); b.more=true; b.spot=k; showSay(rnd(['我再补充一点！','还有一点要补充','顺便补充一下…','最后再补充一点！']),1400); Snd.popup(); }
+  return {
+  begin(){ later(spawnMore,2500); acc=0; },
+  tick(dt){ acc+=dt; const m=mores().length;
+    if(acc>=4.2){ acc=0; if(m<3) spawnMore(); }
+    if(m&&S.effort>0){ S.effort=Math.max(0,S.effort-drain*m*dt); uiAcc+=dt; if(uiAcc>.15){ uiAcc=0; updateUI(); } } },
+  pick(pref,src){ if(src==='tap') return pref&&pref.alive&&!pref.targeted?pref:false; const m=mores().filter(b=>!b.targeted); return m.length?m[0]:pickTarget(); },
+  units(b,src,u,crit){ return b&&b.more?(crit?3:2):u; },
+  helpPick(){ const m=mores().filter(b=>!b.targeted); return m.length?m[0]:pickTarget(); },
+  helpUnits(b){ return b&&b.more?2:1.2; },
+  sub(){ const m=mores().length; return m?`「再补充一点」×${m} 正在拖慢进度！`:'限时散会 · 每一刀都算数'; }
+}; },
+/* L3 night chat */ ()=>{ let acc=.6, col=0, wrongs=0, esc_=0; const spd=15;
+  function spawnMsg(){ const bad=Math.random()<.65, ty=rnd(bad?TY.bad:TY.good); col=1-col;
+    const who=bad?(Math.random()<.75?shortOf():'行政小刘'):rnd(COLLEAGUES).n;
+    const x=col?rng(66,74):rng(40,50);
+    const b=makeBubble(ty,{left:x+'%',top:'106%',cls:'msg '+(bad?'bad':'good'),who,noIcon:true}); b.y=106; b.bad=bad; b.good=!bad;
+    if(!bad) b.saySelf=rnd(['诶？这条是正常消息啊～','「'+ty.t+'」不用砍吧？','友军！是友军！']); }
+  return { noSlots:true,
+  setup(){ S.slots=[]; },
+  begin(){ spawnMsg(); stoast('只砍红名坏消息，别误伤「收到」「+1」！',2600); },
+  tick(dt){ acc+=dt; if(acc>=.8){ acc=0; spawnMsg(); }
+    alive().forEach(b=>{ if(b.y==null) return; b.y-=spd*dt; b.el.style.top=b.y+'%';
+      if(b.y<-8){ const was=b.bad&&!b.targeted; kill(b);
+        if(was&&S.effort>0){ const d=gain(-.5); esc_++; const r=stage.getBoundingClientRect(); floatTxt(r.left+r.width*.6,r.top+30,'漏看 '+fmtDelta(d)+'%','neg'); updateUI(); if(esc_===1) stoast('有坏消息溜走了，点快一点！',1800); } } }); },
+  pick(pref,src){
+    if(src==='tap'){ if(!pref||!pref.alive||pref.targeted||pref.wrong) return false; return pref; }
+    const bs=alive(b=>b.bad&&!b.targeted).sort((a,b)=>a.y-b.y); if(bs.length) return bs[0];
+    gtoast('暂时没有坏消息，等红名消息出现再砍～',1400); return false; },
+  units(b,src,u,crit){ if(!b) return 0; if(b.good) return -3; return src==='tap'?(crit?3:2):(crit?1.5:1); },
+  decorate(b){ const h=()=>{}; b.onHit=(Tl)=>{ if(b.good){ b.wrong=true; b.el.classList.add('wrong'); wrongs++; stoast(wrongs===1?'误伤友军！「'+b.type.t+'」是正常消息，会扣进度哦':'又误伤啦，看准红名再砍！',2000); Snd.osc&&Snd.osc({f:300,f2:180,d:.18,v:.14}); } else popBubble(b,false,Tl.k==='knife'?'slice':null); }; b.onHelp=()=>popBubble(b); },
+  helpPick(){ return null; }, // colleagues cheer from the side, never steal your messages
+  helpUnits(){ return 1; },
+  sub(){ return '大按钮：自动砍最早的坏消息'; }
+}; },
+/* L4 requirements */ ()=>{ let px=-999,py=-999,minisPopped=0;
+  const minis=()=>alive(b=>b.mini);
+  function split(b){ if(minis().length>=8) return; const L=parseFloat(b.el.style.left), Tp=parseFloat(b.el.style.top);
+    [-1,1].forEach(d=>{ const m=makeBubble(b.type,{left:Math.max(10,Math.min(90,L+d*rng(10,16)))+'%',top:Math.max(12,Math.min(88,Tp+rng(-14,14)))+'%',cls:'mini'}); m.mini=true; }); }
+  function clearMinis(){ const ms=minis(); if(!ms.length) return; ms.forEach(m=>popBubble(m)); const d=gain(ms.length*.5); stoast(`连击清屏！一口气砍掉 ${ms.length} 个小需求`,1800); const [bx,by]=center($('#btnChop')); floatTxt(bx,by-70,'清屏 +'+fmtDelta(d)+'%','crit'); FX.rain(12,['conf','coin']); }
+  const onMove=e=>{ if(e.pointerType!=='mouse') return; const r=stage.getBoundingClientRect(); px=e.clientX-r.left; py=e.clientY-r.top; };
+  return { inviteCd:7000,
+  setup(){ stage.addEventListener('pointermove',onMove); },
+  cleanup(){ stage.removeEventListener('pointermove',onMove); },
+  units(b,src,u,crit){ if(!b) return u; if(!b.mini&&!b.dodged&&Math.random()<.28){ b.dodging=true; return 0; } return (b.mini?1:1)*(crit?2:1)+(S.combo>=4?.5:0); },
+  decorate(b){ b.onHit=(Tl)=>{
+      if(b.dodging){ b.dodging=false; b.dodged=true; b.targeted=false; const [x,y]=stagePos(b.el); bonkWord(x,y-24,'闪开了！'); b.el.style.left=rng(14,86)+'%'; b.el.style.top=rng(16,82)+'%'; if(Math.random()<.5) showSay(rnd(['诶，这个需求还挺灵活','需求会自己跑的～','抓不到我的需求吧？']),1200); return; }
+      popBubble(b,false,Tl.k==='knife'?'slice':null); if(!b.mini) split(b); else minisPopped++;
+      if(S.combo>0&&S.combo%8===0) setTimeout(clearMinis,120); };
+    b.onHelp=()=>{ popBubble(b); if(!b.mini) split(b); }; },
+  tick(){ if(px<-900) return; alive(b=>!b.mini).forEach(b=>{ const [x,y]=stagePos(b.el); const dx=x-px, dy=y-py, d=Math.hypot(dx,dy); if(d<70&&d>1){ const k=(70-d)/70*22; b.el.style.translate=`${dx/d*k}px ${dy/d*k}px`; } else if(b.el.style.translate) b.el.style.translate=''; }); },
+  sub(){ const m=minis().length; return S.combo>=4?`连击×${S.combo} · 每刀+0.5 · ×8清屏`:m?`小需求 ×${m} · 连击×8可清屏`:'需求会躲，看准再砍'; }
+}; },
+/* L5 bus */ ()=>{ let t0=0, nb=3.5, ky=0, bumps=0;
+  return {
+  begin(){ later(()=>stoast('大巴出发！直接点中气泡效率最高',2200),300); },
+  tick(dt,t){ t0+=dt; ky*=Math.pow(.02,dt);
+    if(t0>=nb){ t0=0; nb=rng(3,5); bumps++; stage.classList.remove('bump'); void stage.offsetWidth; stage.classList.add('bump'); ky=-28; Snd.osc&&Snd.osc({f:120,f2:60,d:.2,v:.2});
+      if(bumps%2===1) showSay(rnd(['哎哟！师傅慢点～','我的保温杯！','这路…挺有团建氛围','颠得我忘词了']),1300); if(bumps===1) stoast('前方减速带！气泡被颠飞啦',1600); }
+    const tt=t/1000; alive().forEach((b,k)=>{ if(b.ph==null) b.ph=Math.random()*6.28; const dx=Math.sin(tt*1.4+b.ph)*20, dy=Math.cos(tt*1.1+b.ph)*10+ky*(0.6+((k*37)%10)/20); b.el.style.translate=`${dx.toFixed(1)}px ${dy.toFixed(1)}px`; }); },
+  units(b,src,u,crit){ return src==='tap'?(crit?3:1.5):(crit?1:.5); },
+  helpUnits(){ return 1.5; },
+  sub(){ return '点中气泡 ×3 · 大按钮半刀'; }
+}; },
+/* L6 boss */ ()=>{ const SH1=40, SH2=75; const st={s1:0,s2:0,chip:0,helpShield:false,phase:1}; let boss=null;
+  const pieSVG=`<svg class="bpie" viewBox="0 0 100 100"><circle cx="50" cy="52" r="44" fill="#f6c26b" stroke="#c7812e" stroke-width="6"/><circle cx="50" cy="52" r="32" fill="#ffdf8a"/><path d="M26 44 H74 M24 58 H76 M36 30 L64 76 M64 30 L36 76" stroke="#d9963e" stroke-width="3" opacity=".7"/><circle cx="38" cy="50" r="4" fill="#5a2a00"/><circle cx="62" cy="50" r="4" fill="#5a2a00"/><path d="M40 62 Q50 70 60 62" stroke="#5a2a00" stroke-width="3.5" fill="none" stroke-linecap="round"/><circle cx="32" cy="60" r="5" fill="#ff9a8a" opacity=".6"/><circle cx="68" cy="60" r="5" fill="#ff9a8a" opacity=".6"/><ellipse cx="34" cy="30" rx="10" ry="5" fill="#fff" opacity=".45"/><text x="50" y="23" font-size="11" font-weight="900" text-anchor="middle" fill="#b35400">★</text></svg>`;
+  function hp(){ return Math.max(0,100-pctOf(S.effort)); }
+  function drawHP(){ if(!boss) return; const h=hp(); boss.el.querySelector('.bhp i').style.width=h+'%'; boss.el.querySelector('.bhp span').textContent=`HP ${Math.ceil(h)}%`; boss.el.querySelector('.bname').textContent='超级大饼 '+['Ⅰ','Ⅱ','Ⅲ'][st.phase-1]; }
+  function setShield(n){ const was=S.shield; S.shield=Math.max(0,n); boss.el.classList.toggle('shielded',S.shield>0); boss.el.querySelector('.bshield span').textContent='护盾 ×'+S.shield;
+    $('#inviteBadge').textContent=S.shield>0?'破盾':'加速';
+    if(was>0&&S.shield===0){ stoast('护盾碎了！继续砍大饼！',1800); showSay(rnd(['我的护盾！','这…这盾是纸糊的？','大家冷静，饼还在！']),1500); const [x,y]=center(boss.el); FX.burst(x,y,{n:24,kinds:['star','dot'],colors:['#bfe9ff','#fff','#74c0fc'],speed:360,g:200,size:10,life:.8}); Snd.crit(); } }
+  function chipShield(){ const [x,y]=stagePos(boss.el); bonkWord(x,y-40,'护盾 -1'); setShield(S.shield-1); }
+  return { inviteCd:6000,
+  setup(){ const el=document.createElement('button'); el.className='boss'; el.setAttribute('aria-label','砍超级大饼');
+    el.innerHTML=`<div class="bhp"><i></i><span>HP 100%</span></div>${pieSVG}<span class="bname">超级大饼 Ⅰ</span><div class="bshield"><span>护盾 ×0</span></div>`;
+    boss={el,boss:true,alive:true,targeted:false,slot:null,type:{k:'boss',t:'超级大饼',ic:'🥧',c:['#ffbd5a','#f57c00','#b35400']}};
+    boss.onHit=(Tl,crit)=>{ if(!boss.alive) return; el.classList.remove('hit'); void el.offsetWidth; el.classList.add('hit'); const [x,y]=center(el);
+      if(S.shield>0){ bonkWord(stagePos(el)[0],stagePos(el)[1]-30,'铛！护盾'); FX.burst(x,y,{n:8,kinds:['star'],colors:['#bfe9ff','#fff'],speed:220,g:0,size:9,life:.4}); }
+      else FX.burst(x,y,{n:12,kinds:['dot','star'],colors:['#f6c26b','#ffdf8a','#fff'],speed:280,g:500,size:8,life:.7}); };
+    boss.onHelp=()=>{ boss.onHit(TOOLS[0],false); if(S.shield>0){ st.helpShield=true; const [x,y]=stagePos(el); bonkWord(x,y-40,'助力破盾！'); setShield(S.shield-1); } };
+    el.addEventListener('pointerdown',ev=>{ev.preventDefault(); ev.stopPropagation(); chop(boss);});
+    el.addEventListener('click',ev=>{ if(ev.detail===0) chop(boss); });
+    zone.appendChild(el); bubbles.push(boss); drawHP(); },
+  begin(){ later(()=>{ showSay('这可是我的超级大饼！',1800); stoast('砍大饼！血条清零即可通关',2200); },400); },
+  pick(pref,src){ if(src==='tap') return pref&&pref.alive&&(pref.boss||!pref.targeted)?pref:false; return boss; },
+  units(b,src,u,crit){ if(!b) return 0;
+    if(S.shield>0){ st.chip++; if(st.chip%5===0) setTimeout(chipShield,220); else if(st.chip%5===1&&!S.invites) gtoast('护盾好硬！喊同事助力一次破好几格～',1600); return 0; }
+    return b.boss?(crit?2.5:1.2):(crit?1.2:.6); },
+  helpPick(){ return boss; },
+  helpUnits(b){ if(st.helpShield){ st.helpShield=false; return 0; } return 1.4; },
+  onInvite(){ if(S.shield>0) stoast('同事们来破盾啦！',1500); },
+  after(){ drawHP();
+    if(!st.s1&&S.effort>=SH1){ st.s1=1; st.phase=2; st.chip=0; setShield(4); boss.el.classList.add('moving'); stoast('第二阶段：大饼展开护盾！快喊同事助力破盾！',2600); showSay('护盾展开！明年一定上市！',1800); }
+    else if(!st.s2&&S.effort>=SH2&&S.shield===0){ st.s2=1; st.phase=3; st.chip=0; setShield(3); stoast('最终阶段：大饼又加了一层护盾！',2400); showSay('最后的大饼！年终奖翻倍！',1800); }
+    drawHP(); },
+  gain(u){ if(S.shield>0&&u>0) return 0; const cap=!st.s1?SH1:(!st.s2?SH2:E); if(u>0&&S.effort<cap&&S.effort+u>cap) return cap-S.effort; return u; },
+  onFinal(){ stop(); recordWin(); boss.alive=false; boss.el.classList.remove('moving','shielded'); boss.el.classList.add('dead'); const [x,y]=center(boss.el); FX.burst(x,y,{n:50,kinds:['dot','star','conf'],colors:['#f6c26b','#ffdf8a','#fff','#ffd84a',...CONF],speed:480,g:300,size:11,life:1.2}); stoast('超级大饼被砍成了饼干屑！',1600); },
+  sub(){ return S.shield>0?`大饼护盾 ×${S.shield} · 喊同事破盾！`:`超级大饼 HP ${Math.ceil(hp())}%`; }
+}; }
+];
+function isFinal(){ return S.mode==='camp'&&cur===5; }
+function summaryHTML(){ const tot=P.best.reduce((a,b)=>a+(+b||0),0); return `<br>🏅 职场晋级6关全部通关：实习生 → <b>准时下班大师</b>${tot?`（各关最快合计 <b>${tot}</b> 秒）`:''}`; }
+window.CAMP={LEVELS,RANKS,startLevel,showMap,win,lose,isFinal,summaryHTML,
+  stop,
+  setTime(n){ S.tLeft=n; renderTimer(); },
+  get cur(){ return cur; }, get progress(){ return JSON.parse(JSON.stringify(P)); }, reload(){ P=load(); }};
+window.__KL.CAMP=window.CAMP;
+})();
 </script>
 </body>
 </html>
